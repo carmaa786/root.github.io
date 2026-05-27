@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carmaa Admin - Dashboard</title>
+    <title>Carmaa Tech Marketplace</title>
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -11,14 +12,15 @@
     
     <!-- Top navigation bar -->
     <nav class="navbar">
-        <div class="nav-brand">Carmaa Admin Portal</div>
+        <div class="nav-brand">Carmaa Tech Marketplace</div>
+        <button id="theme-toggle" class="theme-btn">☀️ Light Mode</button>
     </nav>
 
     <!-- Main content area -->
     <main class="dashboard-container">
         
         <header class="dashboard-header">
-            <h2>Welcome Back, Admin</h2>
+            <h2>Welcome to Carmaa Tech Marketplace</h2>
             <p>Select a tool below to access its dashboard.</p>
         </header>
 
@@ -86,5 +88,39 @@
         </div>
     </main>
 
+    <script>
+        // Disable Inspect Element
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) || 
+                (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) || 
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u'))) {
+                e.preventDefault();
+            }
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        if (currentTheme === 'light') {
+            document.body.setAttribute('data-theme', 'light');
+            themeToggle.innerText = '🌙 Dark Mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.body.getAttribute('data-theme');
+            if (theme === 'light') {
+                document.body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerText = '☀️ Light Mode';
+            } else {
+                document.body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerText = '🌙 Dark Mode';
+            }
+        });
+    </script>
 </body>
 </html>

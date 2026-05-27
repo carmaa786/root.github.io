@@ -12,6 +12,17 @@
     --text-muted: #cbd5e1;
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --navbar-bg: rgba(15, 23, 42, 0.8);
+}
+
+[data-theme="light"] {
+    --bg-gradient-1: #f8fafc;
+    --bg-gradient-2: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --navbar-bg: rgba(255, 255, 255, 0.6);
 }
 
 /* 
@@ -137,7 +148,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--glass-border);
 }
@@ -234,4 +245,20 @@ body {
 .tool-card h3 {
     font-size: 18px;
     font-weight: 600;
+}
+
+.theme-btn {
+    background: var(--glass-bg);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+    background: var(--glass-border);
 }
