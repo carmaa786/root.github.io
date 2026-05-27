@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmaa Admin - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- Top navigation bar -->
+    <nav class="navbar">
+        <div class="nav-brand">Carmaa Admin Portal</div>
+        <!-- This button will take us back to the login page (acting as a logout) -->
+        <button id="logoutBtn" class="logout-btn">Log Out</button>
+    </nav>
+
+    <!-- Main content area -->
+    <main class="dashboard-container">
+        
+        <header class="dashboard-header">
+            <h2>Welcome Back, Admin</h2>
+            <p>Select a tool below to access its dashboard.</p>
+        </header>
+
+        <!-- A grid container to hold our 4 cards nicely aligned -->
+        <div class="tools-grid">
+            
+            <!-- Tool 1: Billing -->
+            <!-- We use target="_blank" so it opens in a new tab -->
+            <a href="https://carmaacarcare.slack.com/archives/D0AS50Q2R5W/p1779859859758229?thread_ts=1779859042.288529&cid=D0AS50Q2R5W" target="_blank" class="tool-card">
+                <div class="card-image">
+                    <!-- We point to the image you will save in the assets folder -->
+                    <img src="./assets/billing.png" alt="Billing">
+                </div>
+                <h3>Billing</h3>
+            </a>
+
+            <!-- Tool 2: Admin-CRM -->
+            <a href="https://admin-prd.carmaacarcare.com/" target="_blank" class="tool-card">
+                <div class="card-image">
+                    <img src="./assets/admin-crm.png" alt="Admin CRM">
+                </div>
+                <h3>Admin CRM</h3>
+            </a>
+
+            <!-- Tool 3: AIChatbot -->
+            <a href="https://saleaifront.carmaacarcare.com/" target="_blank" class="tool-card">
+                <div class="card-image">
+                    <img src="./assets/ai-chatbot.png" alt="AI Chatbot">
+                </div>
+                <h3>AI Chatbot</h3>
+            </a>
+
+            <!-- Tool 4: PartnerAdmin -->
+            <a href="http://partner-admin.carmaacarcare.com/" target="_blank" class="tool-card">
+                <div class="card-image">
+                    <img src="./assets/partner-admin.png" alt="Partner Admin">
+                </div>
+                <h3>Partner Admin</h3>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Simple script just to handle the logout button on this page -->
+    <script>
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // When clicked, send them back to the login page
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

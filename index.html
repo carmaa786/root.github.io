@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carmaa Admin Portal - Login</title>
+    <!-- We link our CSS file here so the page knows how to style itself -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Importing a premium font (Inter) from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- This container helps us center everything on the screen -->
+    <div class="login-container">
+        
+        <!-- The login box with the glassmorphism effect -->
+        <div class="login-box">
+            <h1>Carmaa Admin</h1>
+            <p class="subtitle">Please sign in to continue</p>
+            
+            <!-- We use an ID here so our JavaScript can find this specific form -->
+            <form id="loginForm">
+                
+                <div class="input-group">
+                    <label for="userid">User ID</label>
+                    <input type="text" id="userid" name="userid" placeholder="Enter your User ID" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+                </div>
+                
+                <!-- This paragraph is hidden by default, but we'll show it using JavaScript if the login fails -->
+                <p id="errorMessage" class="error-message">Invalid User ID or Password.</p>
+                
+                <button type="submit" class="login-button">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- We link our JavaScript file at the end so it loads after the HTML is ready -->
+    <script src="script.js"></script>
+</body>
+</html>
